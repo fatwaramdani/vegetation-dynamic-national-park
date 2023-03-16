@@ -5,7 +5,7 @@ var mod13 = ee.ImageCollection('MODIS/006/MOD13Q1');
 var nps = ee.FeatureCollection('WCMC/WDPA/current/polygons')
   .filter(ee.Filter.inList('NAME', ['Gunung Maras', 'Siberut', 'Sembilang', 'Kerinci Seblat', 'Tesso Nilo', 'Way Kambas', 'Zamrud']));
 
-// Filter MODIS images to summer months between Apr-Aug 2000-2019,
+// Filter MODIS images to summer months between Apr-Aug 2000-2022,
 // Add observation year as an image property.
 var mod13Summer = mod13.filter(ee.Filter.calendarRange(4, 8, 'month'))
   .filter(ee.Filter.calendarRange(2000, 2022, 'year'))

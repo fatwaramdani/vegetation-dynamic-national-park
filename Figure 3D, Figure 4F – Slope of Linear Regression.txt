@@ -1,0 +1,60 @@
+Figure 3D, Figure 4F – Slope of Linear Regression
+
+Map.setOptions('Satellite')
+Map.centerObject(table, 10)
+
+// Danau Sentarum as an Example. Please change the study area accordingly
+var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
+  .filter(ee.Filter.inList('NAME', ['Danau Sentarum']));
+  
+var yearly = function(img) {
+    return img.set('year', img.date().get('year'));
+  }
+
+var mod13 = ee.ImageCollection('MODIS/006/MOD13Q1')
+var sequence = ee.List.sequence(2000, 2022);
+
+var stats= ee.ImageCollection(sequence.map(function(year) {
+  var oneYear = mod13.select('EVI').filter(ee.Filter.calendarRange(year, year, 'year'));
+  var mean = oneYear.mean().rename('mean');
+  var yr = ee.Image(ee.Number(year)).float().rename('year');
+  return ee.Image.cat(mean,yr).set('year', year);
+}));
+
+print('stats', stats)
+
+ // Linear fit
+var linFit = stats.select(['year', 'mean'])
+              .reduce(ee.Reducer.linearFit())
+                  .rename(['slope', 'offset']);
+var slope_regression = linFit.select('slope').multiply(0.0001).clip(table)
+
+var palette =  [
+    'FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01',
+    '012E01', '011D01', '011301'
+  ]
+  
+Map.addLayer(slope_regression, {min: -0.0026, max: 0.0112, palette: palette}, 'slope_regression', 0)
+
+var cond = ee.Image.cat(linFit.select('slope').gt(0).rename('increase'),
+                      linFit.select('slope').lt(0).rename('decrease'));
+
+// Make the histogram, set the options.
+var histogram = ui.Chart.image.histogram(linFit.clip(table), table, 100);
+
+// Display the histogram.
+// print(histogram);
+
+Export.image.toDrive({
+  image: slope_regression,
+  description: 'slope_regression',
+  scale: 250,
+  crs: 'EPSG:4326',
+  region: table,
+  folder: 'TamanNasionalGreenBrown',
+  fileFormat: 'GeoTIFF',
+  formatOptions: {
+    cloudOptimized: true
+  }
+});

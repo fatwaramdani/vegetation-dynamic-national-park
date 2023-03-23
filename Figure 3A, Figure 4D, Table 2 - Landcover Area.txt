@@ -1,0 +1,58 @@
+Figure 3A, Figure 4D, Table 2 - Landcover Area
+
+var dataset = ee.ImageCollection('ESA/WorldCover/v200').first();
+
+var visualization = {
+  bands: ['Map'],
+};
+
+var landcover = dataset.clip(table)
+var lc_values = dataset.get('Map_class_values');
+
+var lc_values = ee.List(lc_values).map(function (ele) {
+  return ee.String(ee.Number(ele).int());
+});
+// print("lc_values", lc_values);
+
+var lc_names = dataset.get('Map_class_names');
+// print("lc_names", lc_names);
+
+var dict = ee.Dictionary.fromLists(lc_values, lc_names);
+print('lc_values_names', dict);
+
+
+var counts = landcover.reduceRegion({
+  reducer: ee.Reducer.frequencyHistogram(),
+  geometry: table,
+  scale: 10,
+  maxPixels: 1e10,
+  bestEffort: true
+}).values().get(0);
+
+var counts_keys = ee.Dictionary(counts).keys();
+var counts_values = ee.Dictionary(counts).values();
+
+var new_counts_keys = counts_keys.map(function(ele) {
+  return dict.get(ele);
+});
+
+// print('lc_yangada', new_counts_keys);
+// print('pixel_lc_yangada', counts_values);
+
+var new_dict = ee.Dictionary.fromLists(new_counts_keys, counts_values);
+print('pixel_landcover', new_dict);
+
+Map.centerObject(table);
+Map.addLayer(landcover, visualization, "Landcover");
+
+Export.image.toDrive({
+  image: landcover,
+  description: 'landcover_',
+  folder: 'TamanNasionalGreenBrown',
+  region: table,
+  scale: 10,
+  crs: 'EPSG:4326',
+  formatOptions: {
+    cloudOptimized: true
+  }
+});

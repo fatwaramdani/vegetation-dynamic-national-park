@@ -1,0 +1,870 @@
+Table 4 (Mode Peaks and Troughs)
+
+
+// Danau Sentarum as an Example. Please change the study area accordingly
+var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
+  .filter(ee.Filter.inList('NAME', ['Danau Sentarum']))
+  
+Map.setOptions('SATELLITE'); 
+Map.centerObject(table, 10, 0); 
+
+  
+var startDate_00 = ee.Date('2000-01-01');
+var endDate_00 = ee.Date('2000-12-31');
+
+var startDate_01 = ee.Date('2001-01-01');
+var endDate_01 = ee.Date('2001-12-31');
+
+var startDate_02 = ee.Date('2002-01-01');
+var endDate_02 = ee.Date('2002-12-31');
+
+var startDate_03 = ee.Date('2003-01-01');
+var endDate_03 = ee.Date('2003-12-31');
+
+var startDate_04 = ee.Date('2004-01-01');
+var endDate_04 = ee.Date('2004-12-31');
+
+var startDate_05 = ee.Date('2005-01-01');
+var endDate_05 = ee.Date('2005-12-31');
+
+var startDate_06 = ee.Date('2006-01-01');
+var endDate_06 = ee.Date('2006-12-31');
+
+var startDate_07 = ee.Date('2007-01-01');
+var endDate_07 = ee.Date('2007-12-31');
+
+var startDate_08 = ee.Date('2008-01-01');
+var endDate_08 = ee.Date('2008-12-31');
+
+var startDate_09 = ee.Date('2009-01-01');
+var endDate_09 = ee.Date('2009-12-31');
+
+var startDate_10 = ee.Date('2010-01-01');
+var endDate_10 = ee.Date('2010-12-31');
+
+var startDate_11 = ee.Date('2011-01-01');
+var endDate_11 = ee.Date('2011-12-31');
+
+var startDate_12 = ee.Date('2012-01-01');
+var endDate_12 = ee.Date('2012-12-31');
+
+var startDate_13 = ee.Date('2013-01-01');
+var endDate_13 = ee.Date('2013-12-31');
+
+var startDate_14 = ee.Date('2014-01-01');
+var endDate_14 = ee.Date('2014-12-31');
+
+var startDate_15 = ee.Date('2015-01-01');
+var endDate_15 = ee.Date('2015-12-31');
+
+var startDate_16 = ee.Date('2016-01-01');
+var endDate_16 = ee.Date('2016-12-31');
+
+var startDate_17 = ee.Date('2017-01-01');
+var endDate_17 = ee.Date('2017-12-31');
+
+var startDate_18 = ee.Date('2018-01-01');
+var endDate_18 = ee.Date('2018-12-31');
+
+var startDate_19 = ee.Date('2019-01-01');
+var endDate_19 = ee.Date('2019-12-31');
+
+var startDate_20 = ee.Date('2020-01-01');
+var endDate_20 = ee.Date('2020-12-31');
+
+var startDate_21 = ee.Date('2021-01-01');
+var endDate_21 = ee.Date('2021-12-31');
+
+var startDate_22 = ee.Date('2022-01-01');
+var endDate_22 = ee.Date('2022-12-31');
+// EVI
+var MOD_00 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_00, endDate_00))
+          .filterBounds(table)
+
+var MOD_01 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_01, endDate_01))
+          .filterBounds(table)
+          
+var MOD_02 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_02, endDate_02))
+          .filterBounds(table)
+
+var MOD_03 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_03, endDate_03))
+          .filterBounds(table)          
+
+var MOD_04 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_04, endDate_04))
+          .filterBounds(table)
+
+var MOD_05 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_05, endDate_05))
+          .filterBounds(table)
+          
+var MOD_06 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_06, endDate_06))
+          .filterBounds(table)
+
+var MOD_07 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_07, endDate_07))
+          .filterBounds(table) 
+
+var MOD_08 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_08, endDate_08))
+          .filterBounds(table)
+
+var MOD_09 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_09, endDate_09))
+          .filterBounds(table)
+          
+var MOD_10 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_10, endDate_10))
+          .filterBounds(table)
+
+var MOD_11 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_11, endDate_11))
+          .filterBounds(table)          
+
+var MOD_12 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_12, endDate_12))
+          .filterBounds(table)
+
+var MOD_13 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_13, endDate_13))
+          .filterBounds(table)
+          
+var MOD_14 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_14, endDate_14))
+          .filterBounds(table)
+
+var MOD_15 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_15, endDate_15))
+          .filterBounds(table) 
+
+var MOD_16 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_16, endDate_16))
+          .filterBounds(table)
+          
+var MOD_17 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_17, endDate_17))
+          .filterBounds(table)
+
+var MOD_18 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_18, endDate_18))
+          .filterBounds(table)          
+
+var MOD_19 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_19, endDate_19))
+          .filterBounds(table)
+
+var MOD_20 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_20, endDate_20))
+          .filterBounds(table)
+          
+var MOD_21 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_21, endDate_21))
+          .filterBounds(table)
+
+var MOD_22 = ee.ImageCollection("MODIS/061/MOD13Q1").select('EVI')
+          .filter(ee.Filter.date(startDate_22, endDate_22))
+          .filterBounds(table) 
+          
+var addDate = function(image) {
+  // return image.addBands(ee.Image.constant(image.date().millis()).long().rename('time'))
+  return image.addBands(ee.Image.constant(ee.Number.parse(image.date().format("DDD"))).rename('time').float()); 
+};
+
+var evi_00 = MOD_00.map(addDate)
+var evi_01 = MOD_01.map(addDate)
+var evi_02 = MOD_02.map(addDate)
+var evi_03 = MOD_03.map(addDate)
+var evi_04 = MOD_04.map(addDate)
+var evi_05 = MOD_05.map(addDate)
+var evi_06 = MOD_06.map(addDate)
+var evi_07 = MOD_07.map(addDate)
+var evi_08 = MOD_08.map(addDate)
+var evi_09 = MOD_09.map(addDate)
+var evi_10 = MOD_10.map(addDate)
+var evi_11 = MOD_11.map(addDate)
+var evi_12 = MOD_12.map(addDate)
+var evi_13 = MOD_13.map(addDate)
+var evi_14 = MOD_14.map(addDate)
+var evi_15 = MOD_15.map(addDate)
+var evi_16 = MOD_16.map(addDate)
+var evi_17 = MOD_17.map(addDate)
+var evi_18 = MOD_18.map(addDate)
+var evi_19 = MOD_19.map(addDate)
+var evi_20 = MOD_20.map(addDate)
+var evi_21 = MOD_21.map(addDate)
+var evi_22 = MOD_22.map(addDate)
+
+// turn image collection into an array
+var array_00 = evi_00.toArray();
+var array_01 = evi_01.toArray();
+var array_02 = evi_02.toArray();
+var array_03 = evi_03.toArray();
+var array_04 = evi_04.toArray();
+var array_05 = evi_05.toArray();
+var array_06 = evi_06.toArray();
+var array_07 = evi_07.toArray();
+var array_08 = evi_08.toArray();
+var array_09 = evi_09.toArray();
+var array_10 = evi_10.toArray();
+var array_11 = evi_11.toArray();
+var array_12 = evi_12.toArray();
+var array_13 = evi_13.toArray();
+var array_14 = evi_14.toArray();
+var array_15 = evi_15.toArray();
+var array_16 = evi_16.toArray();
+var array_17 = evi_17.toArray();
+var array_18 = evi_18.toArray();
+var array_19 = evi_19.toArray();
+var array_20 = evi_20.toArray();
+var array_21 = evi_21.toArray();
+var array_22 = evi_22.toArray();
+
+
+
+// sort array by the first band, keeping other bands
+var axes_00 = { image:0, band:1 }
+var axes_01 = { image:0, band:1 }
+var axes_02 = { image:0, band:1 }
+var axes_03 = { image:0, band:1 }
+var axes_04 = { image:0, band:1 }
+var axes_05 = { image:0, band:1 }
+var axes_06 = { image:0, band:1 }
+var axes_07 = { image:0, band:1 }
+var axes_08 = { image:0, band:1 }
+var axes_09 = { image:0, band:1 }
+var axes_10 = { image:0, band:1 }
+var axes_11 = { image:0, band:1 }
+var axes_12 = { image:0, band:1 }
+var axes_13 = { image:0, band:1 }
+var axes_14 = { image:0, band:1 }
+var axes_15 = { image:0, band:1 }
+var axes_16 = { image:0, band:1 }
+var axes_17 = { image:0, band:1 }
+var axes_18 = { image:0, band:1 }
+var axes_19 = { image:0, band:1 }
+var axes_20 = { image:0, band:1 }
+var axes_21 = { image:0, band:1 }
+var axes_22 = { image:0, band:1 }
+
+var sort_00 = array_00.arraySlice(axes_00.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_01 = array_01.arraySlice(axes_01.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_02 = array_02.arraySlice(axes_02.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_03 = array_03.arraySlice(axes_03.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_04 = array_04.arraySlice(axes_04.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_05 = array_05.arraySlice(axes_05.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_06 = array_06.arraySlice(axes_06.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_07 = array_07.arraySlice(axes_07.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_08 = array_08.arraySlice(axes_08.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_09 = array_09.arraySlice(axes_09.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_10 = array_10.arraySlice(axes_10.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_11 = array_11.arraySlice(axes_11.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_12 = array_12.arraySlice(axes_12.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_13 = array_13.arraySlice(axes_13.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_14 = array_14.arraySlice(axes_14.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_15 = array_15.arraySlice(axes_15.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_16 = array_16.arraySlice(axes_16.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_17 = array_17.arraySlice(axes_17.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_18 = array_18.arraySlice(axes_18.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_19 = array_19.arraySlice(axes_19.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_20 = array_20.arraySlice(axes_20.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_21 = array_21.arraySlice(axes_21.band, 0, 1);  // select bands from index 0 to 1 (evi)
+var sort_22 = array_22.arraySlice(axes_22.band, 0, 1);  // select bands from index 0 to 1 (evi)
+
+
+
+var sorted_00 = array_00.arraySort(sort_00);
+var sorted_01 = array_01.arraySort(sort_01);
+var sorted_02 = array_02.arraySort(sort_02);
+var sorted_03 = array_03.arraySort(sort_03);
+var sorted_04 = array_04.arraySort(sort_04);
+var sorted_05 = array_05.arraySort(sort_05);
+var sorted_06 = array_06.arraySort(sort_06);
+var sorted_07 = array_07.arraySort(sort_07);
+var sorted_08 = array_08.arraySort(sort_08);
+var sorted_09 = array_09.arraySort(sort_09);
+var sorted_10 = array_10.arraySort(sort_10);
+var sorted_11 = array_11.arraySort(sort_11);
+var sorted_12 = array_12.arraySort(sort_12);
+var sorted_13 = array_13.arraySort(sort_13);
+var sorted_14 = array_14.arraySort(sort_14);
+var sorted_15 = array_15.arraySort(sort_15);
+var sorted_16 = array_16.arraySort(sort_16);
+var sorted_17 = array_17.arraySort(sort_17);
+var sorted_18 = array_18.arraySort(sort_18);
+var sorted_19 = array_19.arraySort(sort_19);
+var sorted_20 = array_20.arraySort(sort_20);
+var sorted_21 = array_21.arraySort(sort_21);
+var sorted_22 = array_22.arraySort(sort_22);
+
+
+
+// take the first image only (MAX evi)
+var length_00 = sorted_00.arrayLength(axes_00.image);
+var length_01 = sorted_01.arrayLength(axes_01.image);
+var length_02 = sorted_02.arrayLength(axes_02.image);
+var length_03 = sorted_03.arrayLength(axes_03.image);
+var length_04 = sorted_04.arrayLength(axes_04.image);
+var length_05 = sorted_05.arrayLength(axes_05.image);
+var length_06 = sorted_06.arrayLength(axes_06.image);
+var length_07 = sorted_07.arrayLength(axes_07.image);
+var length_08 = sorted_08.arrayLength(axes_08.image);
+var length_09 = sorted_09.arrayLength(axes_09.image);
+var length_10 = sorted_10.arrayLength(axes_10.image);
+var length_11 = sorted_11.arrayLength(axes_11.image);
+var length_12 = sorted_12.arrayLength(axes_12.image);
+var length_13 = sorted_13.arrayLength(axes_13.image);
+var length_14 = sorted_14.arrayLength(axes_14.image);
+var length_15 = sorted_15.arrayLength(axes_15.image);
+var length_16 = sorted_16.arrayLength(axes_16.image);
+var length_17 = sorted_17.arrayLength(axes_17.image);
+var length_18 = sorted_18.arrayLength(axes_18.image);
+var length_19 = sorted_19.arrayLength(axes_19.image);
+var length_20 = sorted_20.arrayLength(axes_20.image);
+var length_21 = sorted_21.arrayLength(axes_21.image);
+var length_22 = sorted_22.arrayLength(axes_22.image);
+
+
+// for the max value sorted
+var valuesMax_00 = sorted_00.arraySlice(axes_00.image, length_00.subtract(1), length_00);
+var valuesMax_01 = sorted_01.arraySlice(axes_01.image, length_01.subtract(1), length_01);
+var valuesMax_02 = sorted_02.arraySlice(axes_02.image, length_02.subtract(1), length_02);
+var valuesMax_03 = sorted_03.arraySlice(axes_03.image, length_03.subtract(1), length_03);
+var valuesMax_04 = sorted_04.arraySlice(axes_04.image, length_04.subtract(1), length_04);
+var valuesMax_05 = sorted_05.arraySlice(axes_05.image, length_05.subtract(1), length_05);
+var valuesMax_06 = sorted_06.arraySlice(axes_06.image, length_06.subtract(1), length_06);
+var valuesMax_07 = sorted_07.arraySlice(axes_07.image, length_07.subtract(1), length_07);
+var valuesMax_08 = sorted_08.arraySlice(axes_08.image, length_08.subtract(1), length_08);
+var valuesMax_09 = sorted_09.arraySlice(axes_09.image, length_09.subtract(1), length_09);
+var valuesMax_10 = sorted_10.arraySlice(axes_10.image, length_10.subtract(1), length_10);
+var valuesMax_11 = sorted_11.arraySlice(axes_11.image, length_11.subtract(1), length_11);
+var valuesMax_12 = sorted_12.arraySlice(axes_12.image, length_12.subtract(1), length_12);
+var valuesMax_13 = sorted_13.arraySlice(axes_13.image, length_13.subtract(1), length_13);
+var valuesMax_14 = sorted_14.arraySlice(axes_14.image, length_14.subtract(1), length_14);
+var valuesMax_15 = sorted_15.arraySlice(axes_15.image, length_15.subtract(1), length_15);
+var valuesMax_16 = sorted_16.arraySlice(axes_16.image, length_16.subtract(1), length_16);
+var valuesMax_17 = sorted_17.arraySlice(axes_17.image, length_17.subtract(1), length_17);
+var valuesMax_18 = sorted_18.arraySlice(axes_18.image, length_18.subtract(1), length_18);
+var valuesMax_19 = sorted_19.arraySlice(axes_19.image, length_19.subtract(1), length_19);
+var valuesMax_20 = sorted_20.arraySlice(axes_20.image, length_20.subtract(1), length_20);
+var valuesMax_21 = sorted_21.arraySlice(axes_21.image, length_21.subtract(1), length_21);
+var valuesMax_22 = sorted_22.arraySlice(axes_22.image, length_22.subtract(1), length_22);
+
+// for the min value sorted
+// var valuesMin = sorted.arraySlice(axes.image, 0, 1);
+
+var valuesMin_00 = sorted_00.arraySlice(axes_00.image, 0, 1);
+var valuesMin_01 = sorted_01.arraySlice(axes_01.image, 0, 1);
+var valuesMin_02 = sorted_02.arraySlice(axes_02.image, 0, 1);
+var valuesMin_03 = sorted_03.arraySlice(axes_03.image, 0, 1);
+var valuesMin_04 = sorted_04.arraySlice(axes_04.image, 0, 1);
+var valuesMin_05 = sorted_05.arraySlice(axes_05.image, 0, 1);
+var valuesMin_06 = sorted_06.arraySlice(axes_06.image, 0, 1);
+var valuesMin_07 = sorted_07.arraySlice(axes_07.image, 0, 1);
+var valuesMin_08 = sorted_08.arraySlice(axes_08.image, 0, 1);
+var valuesMin_09 = sorted_09.arraySlice(axes_09.image, 0, 1);
+var valuesMin_10 = sorted_10.arraySlice(axes_10.image, 0, 1);
+var valuesMin_11 = sorted_11.arraySlice(axes_11.image, 0, 1);
+var valuesMin_12 = sorted_12.arraySlice(axes_12.image, 0, 1);
+var valuesMin_13 = sorted_13.arraySlice(axes_13.image, 0, 1);
+var valuesMin_14 = sorted_14.arraySlice(axes_14.image, 0, 1);
+var valuesMin_15 = sorted_15.arraySlice(axes_15.image, 0, 1);
+var valuesMin_16 = sorted_16.arraySlice(axes_16.image, 0, 1);
+var valuesMin_17 = sorted_17.arraySlice(axes_17.image, 0, 1);
+var valuesMin_18 = sorted_18.arraySlice(axes_18.image, 0, 1);
+var valuesMin_19 = sorted_19.arraySlice(axes_19.image, 0, 1);
+var valuesMin_20 = sorted_20.arraySlice(axes_20.image, 0, 1);
+var valuesMin_21 = sorted_21.arraySlice(axes_21.image, 0, 1);
+var valuesMin_22 = sorted_22.arraySlice(axes_22.image, 0, 1);
+
+
+// convert back to an image  
+var max_00 = valuesMax_00.arrayProject([axes_00.band]).arrayFlatten([['evi', 'time']])
+var max_01 = valuesMax_01.arrayProject([axes_01.band]).arrayFlatten([['evi', 'time']])
+var max_02 = valuesMax_02.arrayProject([axes_02.band]).arrayFlatten([['evi', 'time']])
+var max_03 = valuesMax_03.arrayProject([axes_03.band]).arrayFlatten([['evi', 'time']])
+var max_04 = valuesMax_04.arrayProject([axes_04.band]).arrayFlatten([['evi', 'time']])
+var max_05 = valuesMax_05.arrayProject([axes_05.band]).arrayFlatten([['evi', 'time']])
+var max_06 = valuesMax_06.arrayProject([axes_06.band]).arrayFlatten([['evi', 'time']])
+var max_07 = valuesMax_07.arrayProject([axes_07.band]).arrayFlatten([['evi', 'time']])
+var max_08 = valuesMax_08.arrayProject([axes_08.band]).arrayFlatten([['evi', 'time']])
+var max_09 = valuesMax_09.arrayProject([axes_09.band]).arrayFlatten([['evi', 'time']])
+var max_10 = valuesMax_10.arrayProject([axes_10.band]).arrayFlatten([['evi', 'time']])
+var max_11 = valuesMax_11.arrayProject([axes_11.band]).arrayFlatten([['evi', 'time']])
+var max_12 = valuesMax_12.arrayProject([axes_12.band]).arrayFlatten([['evi', 'time']])
+var max_13 = valuesMax_13.arrayProject([axes_13.band]).arrayFlatten([['evi', 'time']])
+var max_14 = valuesMax_14.arrayProject([axes_14.band]).arrayFlatten([['evi', 'time']])
+var max_15 = valuesMax_15.arrayProject([axes_15.band]).arrayFlatten([['evi', 'time']])
+var max_16 = valuesMax_16.arrayProject([axes_16.band]).arrayFlatten([['evi', 'time']])
+var max_17 = valuesMax_17.arrayProject([axes_17.band]).arrayFlatten([['evi', 'time']])
+var max_18 = valuesMax_18.arrayProject([axes_18.band]).arrayFlatten([['evi', 'time']])
+var max_19 = valuesMax_19.arrayProject([axes_19.band]).arrayFlatten([['evi', 'time']])
+var max_20 = valuesMax_20.arrayProject([axes_20.band]).arrayFlatten([['evi', 'time']])
+var max_21 = valuesMax_21.arrayProject([axes_21.band]).arrayFlatten([['evi', 'time']])
+var max_22 = valuesMax_22.arrayProject([axes_22.band]).arrayFlatten([['evi', 'time']])
+
+var min_00 = valuesMin_00.arrayProject([axes_00.band]).arrayFlatten([['evi', 'time']])
+var min_01 = valuesMin_01.arrayProject([axes_01.band]).arrayFlatten([['evi', 'time']])
+var min_02 = valuesMin_02.arrayProject([axes_02.band]).arrayFlatten([['evi', 'time']])
+var min_03 = valuesMin_03.arrayProject([axes_03.band]).arrayFlatten([['evi', 'time']])
+var min_04 = valuesMin_04.arrayProject([axes_04.band]).arrayFlatten([['evi', 'time']])
+var min_05 = valuesMin_05.arrayProject([axes_05.band]).arrayFlatten([['evi', 'time']]);
+var min_06 = valuesMin_06.arrayProject([axes_06.band]).arrayFlatten([['evi', 'time']]);
+var min_07 = valuesMin_07.arrayProject([axes_07.band]).arrayFlatten([['evi', 'time']]);
+var min_08 = valuesMin_08.arrayProject([axes_08.band]).arrayFlatten([['evi', 'time']]);
+var min_09 = valuesMin_09.arrayProject([axes_09.band]).arrayFlatten([['evi', 'time']]);
+var min_10 = valuesMin_10.arrayProject([axes_10.band]).arrayFlatten([['evi', 'time']]);
+var min_11 = valuesMin_11.arrayProject([axes_11.band]).arrayFlatten([['evi', 'time']]);
+var min_12 = valuesMin_12.arrayProject([axes_12.band]).arrayFlatten([['evi', 'time']]);
+var min_13 = valuesMin_13.arrayProject([axes_13.band]).arrayFlatten([['evi', 'time']]);
+var min_14 = valuesMin_14.arrayProject([axes_14.band]).arrayFlatten([['evi', 'time']]);
+var min_15 = valuesMin_15.arrayProject([axes_15.band]).arrayFlatten([['evi', 'time']]);
+var min_16 = valuesMin_16.arrayProject([axes_16.band]).arrayFlatten([['evi', 'time']]);
+var min_17 = valuesMin_17.arrayProject([axes_17.band]).arrayFlatten([['evi', 'time']]);
+var min_18 = valuesMin_18.arrayProject([axes_18.band]).arrayFlatten([['evi', 'time']]);
+var min_19 = valuesMin_19.arrayProject([axes_19.band]).arrayFlatten([['evi', 'time']]);
+var min_20 = valuesMin_20.arrayProject([axes_20.band]).arrayFlatten([['evi', 'time']]);
+var min_21 = valuesMin_21.arrayProject([axes_21.band]).arrayFlatten([['evi', 'time']]);
+var min_22 = valuesMin_22.arrayProject([axes_22.band]).arrayFlatten([['evi', 'time']]);
+
+
+
+// get the min and max axis by selecting bands 0 and 1
+// var eviMax = max.select(0).clip(table) // get evi
+
+var timeMax_00 = max_00.select(1).clip(table)// get day
+var timeMax_01 = max_01.select(1).clip(table)// get day
+var timeMax_02 = max_02.select(1).clip(table)// get day
+var timeMax_03 = max_03.select(1).clip(table)// get day
+var timeMax_04 = max_04.select(1).clip(table)// get day
+var timeMax_05 = max_05.select(1).clip(table)// get day
+var timeMax_06 = max_06.select(1).clip(table)// get day
+var timeMax_07 = max_07.select(1).clip(table)// get day
+var timeMax_08 = max_08.select(1).clip(table)// get day
+var timeMax_09 = max_09.select(1).clip(table)// get day
+var timeMax_10 = max_10.select(1).clip(table)// get day
+var timeMax_11 = max_11.select(1).clip(table)// get day
+var timeMax_12 = max_12.select(1).clip(table)// get day
+var timeMax_13 = max_13.select(1).clip(table)// get day
+var timeMax_14 = max_14.select(1).clip(table)// get day
+var timeMax_15 = max_15.select(1).clip(table)// get day
+var timeMax_16 = max_16.select(1).clip(table)// get day
+var timeMax_17 = max_17.select(1).clip(table)// get day
+var timeMax_18 = max_18.select(1).clip(table)// get day
+var timeMax_19 = max_19.select(1).clip(table)// get day
+var timeMax_20 = max_20.select(1).clip(table)// get day
+var timeMax_21 = max_21.select(1).clip(table)// get day
+var timeMax_22 = max_22.select(1).clip(table)// get day
+
+
+var timeMin_00 = min_00.select(1).clip(table)// get day
+var timeMin_01 = min_01.select(1).clip(table)// get day
+var timeMin_02 = min_02.select(1).clip(table)// get day
+var timeMin_03 = min_03.select(1).clip(table)// get day
+var timeMin_04 = min_04.select(1).clip(table)// get day
+var timeMin_05 = min_05.select(1).clip(table)// get day
+var timeMin_06 = min_06.select(1).clip(table)// get day
+var timeMin_07 = min_07.select(1).clip(table)// get day
+var timeMin_08 = min_08.select(1).clip(table)// get day
+var timeMin_09 = min_09.select(1).clip(table)// get day
+var timeMin_10 = min_10.select(1).clip(table)// get day
+var timeMin_11 = min_11.select(1).clip(table)// get day
+var timeMin_12 = min_12.select(1).clip(table)// get day
+var timeMin_13 = min_13.select(1).clip(table)// get day
+var timeMin_14 = min_14.select(1).clip(table)// get day
+var timeMin_15 = min_15.select(1).clip(table)// get day
+var timeMin_16 = min_16.select(1).clip(table)// get day
+var timeMin_17 = min_17.select(1).clip(table)// get day
+var timeMin_18 = min_18.select(1).clip(table)// get day
+var timeMin_19 = min_19.select(1).clip(table)// get day
+var timeMin_20 = min_20.select(1).clip(table)// get day
+var timeMin_21 = min_21.select(1).clip(table)// get day
+var timeMin_22 = min_22.select(1).clip(table)// get day
+
+var reducers = ee.Reducer.mean().combine({
+  reducer2: ee.Reducer.stdDev(),
+  sharedInputs: true
+}).combine({
+  reducer2: ee.Reducer.median(),
+  sharedInputs: true
+}).combine({
+  reducer2: ee.Reducer.mode(),
+  sharedInputs: true
+});
+
+var multiStats_timeMin_00 = timeMin_00.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_01 = timeMin_01.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_02 = timeMin_02.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_03 = timeMin_03.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_04 = timeMin_04.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_05 = timeMin_05.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_06 = timeMin_06.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_07 = timeMin_07.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_08 = timeMin_08.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_09 = timeMin_09.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_10 = timeMin_10.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_11 = timeMin_11.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_12 = timeMin_12.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_13 = timeMin_13.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_14 = timeMin_14.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_15 = timeMin_15.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_16 = timeMin_16.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_17 = timeMin_17.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_18 = timeMin_18.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_19 = timeMin_19.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_20 = timeMin_20.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_21 = timeMin_21.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMin_22 = timeMin_22.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+print('multiStats_timeMin_2000', multiStats_timeMin_00);
+print('multiStats_timeMin_2001', multiStats_timeMin_01);
+print('multiStats_timeMin_2002', multiStats_timeMin_02);
+print('multiStats_timeMin_2003', multiStats_timeMin_03);
+print('multiStats_timeMin_2004', multiStats_timeMin_04);
+print('multiStats_timeMin_2005', multiStats_timeMin_05);
+print('multiStats_timeMin_2006', multiStats_timeMin_06);
+print('multiStats_timeMin_2007', multiStats_timeMin_07);
+print('multiStats_timeMin_2008', multiStats_timeMin_08);
+print('multiStats_timeMin_2009', multiStats_timeMin_09);
+print('multiStats_timeMin_2010', multiStats_timeMin_10);
+print('multiStats_timeMin_2011', multiStats_timeMin_11);
+print('multiStats_timeMin_2012', multiStats_timeMin_12);
+print('multiStats_timeMin_2013', multiStats_timeMin_13);
+print('multiStats_timeMin_2014', multiStats_timeMin_14);
+print('multiStats_timeMin_2015', multiStats_timeMin_15);
+print('multiStats_timeMin_2016', multiStats_timeMin_16);
+print('multiStats_timeMin_2017', multiStats_timeMin_17);
+print('multiStats_timeMin_2018', multiStats_timeMin_18);
+print('multiStats_timeMin_2019', multiStats_timeMin_19);
+print('multiStats_timeMin_2020', multiStats_timeMin_20);
+print('multiStats_timeMin_2021', multiStats_timeMin_21);
+print('multiStats_timeMin_2022', multiStats_timeMin_22);
+
+
+var multiStats_timeMax_00 = timeMax_00.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_01 = timeMax_01.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_02 = timeMax_02.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_03 = timeMax_03.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_04 = timeMax_04.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_05 = timeMax_05.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_06 = timeMax_06.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_07 = timeMax_07.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_08 = timeMax_08.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_09 = timeMax_09.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_10 = timeMax_10.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_11 = timeMax_11.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_12 = timeMax_12.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_13 = timeMax_13.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_14 = timeMax_14.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_15 = timeMax_15.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_16 = timeMax_16.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_17 = timeMax_17.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_18 = timeMax_18.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_19 = timeMax_19.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_20 = timeMax_20.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_21 = timeMax_21.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+var multiStats_timeMax_22 = timeMax_22.reduceRegion({
+  reducer: reducers,
+  geometry: table,
+  scale: 250,
+  crs: 'EPSG:4326',
+});
+
+
+print('multiStats_timeMax_2000', multiStats_timeMax_00);
+print('multiStats_timeMax_2001', multiStats_timeMax_01);
+print('multiStats_timeMax_2002', multiStats_timeMax_02);
+print('multiStats_timeMax_2003', multiStats_timeMax_03);
+print('multiStats_timeMax_2004', multiStats_timeMax_04);
+print('multiStats_timeMax_2005', multiStats_timeMax_05);
+print('multiStats_timeMax_2006', multiStats_timeMax_06);
+print('multiStats_timeMax_2007', multiStats_timeMax_07);
+print('multiStats_timeMax_2008', multiStats_timeMax_08);
+print('multiStats_timeMax_2009', multiStats_timeMax_09);
+print('multiStats_timeMax_2010', multiStats_timeMax_10);
+print('multiStats_timeMax_2011', multiStats_timeMax_11);
+print('multiStats_timeMax_2012', multiStats_timeMax_12);
+print('multiStats_timeMax_2013', multiStats_timeMax_13);
+print('multiStats_timeMax_2014', multiStats_timeMax_14);
+print('multiStats_timeMax_2015', multiStats_timeMax_15);
+print('multiStats_timeMax_2016', multiStats_timeMax_16);
+print('multiStats_timeMax_2017', multiStats_timeMax_17);
+print('multiStats_timeMax_2018', multiStats_timeMax_18);
+print('multiStats_timeMax_2019', multiStats_timeMax_19);
+print('multiStats_timeMax_2020', multiStats_timeMax_20);
+print('multiStats_timeMax_2021', multiStats_timeMax_21);
+print('multiStats_timeMax_2022', multiStats_timeMax_22);
+

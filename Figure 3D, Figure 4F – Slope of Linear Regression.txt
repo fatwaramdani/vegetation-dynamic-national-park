@@ -1,7 +1,4 @@
-Figure 3D, Figure 4F – Slope of Linear Regression
-
-Map.setOptions('Satellite')
-Map.centerObject(table, 10)
+//Figure 3D, Figure 4F – Slope of Linear Regression
 
 // Danau Sentarum as an Example. Please change the study area accordingly
 var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
@@ -36,6 +33,8 @@ var palette =  [
   ]
   
 Map.addLayer(slope_regression, {min: -0.0026, max: 0.0112, palette: palette}, 'slope_regression', 0)
+Map.setOptions('Satellite')
+Map.centerObject(table, 10)
 
 var cond = ee.Image.cat(linFit.select('slope').gt(0).rename('increase'),
                       linFit.select('slope').lt(0).rename('decrease'));

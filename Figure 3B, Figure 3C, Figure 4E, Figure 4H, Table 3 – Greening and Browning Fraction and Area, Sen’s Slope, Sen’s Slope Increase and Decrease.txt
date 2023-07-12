@@ -1,4 +1,4 @@
-Figure 3B, Figure 3C, Figure 4E, Figure 4H, Table 3 – Greening and Browning Fraction and Area, Sen’s Slope, Sen’s Slope Increase and Decrease
+//Figure 3B, Figure 3C, Figure 4E, Figure 4H, Table 3 – Greening and Browning Fraction and Area, Sen’s Slope, Sen’s Slope Increase and Decrease
 
 // Danau Sentarum as an Example. Please change the study area accordingly
 var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')

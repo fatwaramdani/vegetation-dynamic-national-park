@@ -150,7 +150,7 @@ Export.image.toDrive({
   image: DNS,
   description: 'TN-DanauSentarum',
   scale: 30,
-  region: roi,
+  region: nps,
   fileFormat: 'GeoTIFF',
   formatOptions: {
     cloudOptimized: true

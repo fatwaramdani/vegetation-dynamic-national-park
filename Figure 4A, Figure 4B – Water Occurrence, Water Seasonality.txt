@@ -1,5 +1,4 @@
-Figure 4A, Figure 4B – Water Occurrence, Water Seasonality
-
+//Figure 4A, Figure 4B – Water Occurrence, Water Seasonality
 
 // Danau Sentarum as an Example. Please change the study area accordingly
 var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
@@ -125,22 +124,6 @@ var transition_summary_chart = ui.Chart.feature.byFeature({
 print(transition_summary_chart);
 
 occurrence = occurrence.updateMask(occurrence.divide(100)).clip(table)
-//////////////////////////////////////////////////////////////
-// Initialize Map Location
-//////////////////////////////////////////////////////////////
-
-// Uncomment one of the following statements to center the map on
-// a particular location.
-// Map.setCenter(-90.162, 29.8597, 10);   // New Orleans, USA
-// Map.setCenter(-114.9774, 31.9254, 10); // Mouth of the Colorado River, Mexico
-// Map.setCenter(-111.1871, 37.0963, 11); // Lake Powell, USA
-// Map.setCenter(149.412, -35.0789, 11);  // Lake George, Australia
-// Map.setCenter(105.26, 11.2134, 9);     // Mekong River Basin, SouthEast Asia
-// Map.setCenter(90.6743, 22.7382, 10);   // Meghna River, Bangladesh
-// Map.setCenter(81.2714, 16.5079, 11);   // Godavari River Basin Irrigation Project, India
-// Map.setCenter(14.7035, 52.0985, 12);   // River Oder, Germany & Poland
-// Map.setCenter(-59.1696, -33.8111, 9);  // Buenos Aires, Argentina
-// Map.setCenter(-74.4557, -8.4289, 11);  // Ucayali River, Peru
 
 //////////////////////////////////////////////////////////////
 // Map Layers

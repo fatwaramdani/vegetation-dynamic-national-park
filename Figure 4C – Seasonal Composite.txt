@@ -1,4 +1,4 @@
-Figure 4C – Seasonal Composite
+//Figure 4C – Seasonal Composite
 
 // Danau Sentarum as an Example. Please change the study area accordingly
 var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
@@ -6,7 +6,7 @@ var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
 
 // Prepare to display vegetation condition to the map; set map display options.
 Map.setOptions('SATELLITE');
-Map.centerObject(table, 9);
+Map.centerObject(table, 11);
 
 // Draw national park boundaries to the map.
 var paimg = ee.Image().byte().paint(table, 0, 2);

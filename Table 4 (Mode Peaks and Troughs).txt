@@ -1,5 +1,4 @@
-Table 4 (Mode Peaks and Troughs)
-
+//Table 4 (Mode Peaks and Troughs)
 
 // Danau Sentarum as an Example. Please change the study area accordingly
 var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')

@@ -1,4 +1,8 @@
-Figure 3A, Figure 4D, Table 2 - Landcover Area
+//Figure 3A, Figure 4D, Table 2 - Landcover Area
+
+// Danau Sentarum as an Example. Please change the study area accordingly
+var table = ee.FeatureCollection('WCMC/WDPA/current/polygons')
+  .filter(ee.Filter.inList('NAME', ['Danau Sentarum']));
 
 var dataset = ee.ImageCollection('ESA/WorldCover/v200').first();
 
